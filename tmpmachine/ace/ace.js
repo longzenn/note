@@ -4006,15 +4006,12 @@ exports.addTouchListeners = function(el, editor) {
             animationSteps = 0;
             showContextMenu();
         } else if (mode == "scroll") {
-            L('scrolled');
+            L('test');
+            animate();
             return
-            // animate();
-            // editor.blur()
             e.preventDefault();
-            // hideContextMenu();
-            // showContextMenu();
+            hideContextMenu();
         } else {
-            L('touchedn');
             showContextMenu();
         }
         clearTimeout(longTouchTimer);
@@ -4034,15 +4031,10 @@ exports.addTouchListeners = function(el, editor) {
         var wheelY = startY - touchObj.clientY;
 
         if (mode == "wait") {
-          L('iswait')
-            if (wheelX * wheelX + wheelY * wheelY > 4) {
-              L('iscurosr')
+            if (wheelX * wheelX + wheelY * wheelY > 4)
                 mode = "cursor";
-            } else {
-              L('nofocus?')
-              
+            else
                 return e.preventDefault();
-            }
         }
 
         startX = touchObj.clientX;
