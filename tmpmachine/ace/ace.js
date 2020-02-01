@@ -4008,7 +4008,7 @@ exports.addTouchListeners = function(el, editor) {
         } else if (mode == "scroll") {
             animate();
             hideContextMenu();
-            console.log('nono scroll')
+            console.log('nono scroll 2')
             e.preventDefault();
             return
         } else {
