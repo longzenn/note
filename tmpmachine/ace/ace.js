@@ -4001,21 +4001,20 @@ exports.addTouchListeners = function(el, editor) {
         if (mode == "zoom") {
             mode = "";
             animationSteps = 0;
-            L(1);
         } else if (longTouchTimer) {
             editor.selection.moveToPosition(pos);
             animationSteps = 0;
-            L(123);
             showContextMenu();
         } else if (mode == "scroll") {
+            L('scrolled');
+            return
             // animate();
-            L(22);
             // editor.blur()
             e.preventDefault();
-            hideContextMenu();
+            // hideContextMenu();
             // showContextMenu();
         } else {
-            L(2);
+            L('touchedn');
             showContextMenu();
         }
         clearTimeout(longTouchTimer);
@@ -4035,10 +4034,15 @@ exports.addTouchListeners = function(el, editor) {
         var wheelY = startY - touchObj.clientY;
 
         if (mode == "wait") {
-            if (wheelX * wheelX + wheelY * wheelY > 4)
+          L('iswait')
+            if (wheelX * wheelX + wheelY * wheelY > 4) {
+              L('iscurosr')
                 mode = "cursor";
-            else
+            } else {
+              L('nofocus?')
+              
                 return e.preventDefault();
+            }
         }
 
         startX = touchObj.clientX;
