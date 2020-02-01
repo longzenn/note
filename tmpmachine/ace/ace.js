@@ -4012,7 +4012,8 @@ exports.addTouchListeners = function(el, editor) {
             L(22);
             // editor.blur()
             e.preventDefault();
-            hideContextMenu();
+            // hideContextMenu();
+            showContextMenu();
         } else {
             L(2);
             showContextMenu();
