@@ -27,6 +27,32 @@
       ]
     },
     {
+      "target": "attemp2",
+      "public": "attemp2",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=0"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "target": "tmpmachine",
       "public": "tmpmachine",
       "ignore": [
